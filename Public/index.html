@@ -1,0 +1,77 @@
+
+<!class="" html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <title>YouTube to MP3 Converter</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=poppins:400,500,700" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Language Selector in the top-right corner -->
+  <nav class="top-nav">
+  <select id="languageSelector">
+    <!-- English (US) -->
+    <option value="en" selected>🇺🇸 English</option>
+    <!-- Chinese (Simplified) -->
+    <option value="zh">🇨🇳 Chinese</option>
+    <!-- Hindi (India) -->
+    <option value="hi">🇮🇳 Hindi</option>
+    <!-- Spanish (Spain) -->
+    <option value="es">🇪🇸 Spanish</option>
+    <!-- French (France) -->
+    <option value="fr">🇫🇷 French</option>
+    <!-- Arabic (Saudi Arabia, as an example) -->
+    <option value="ar">🇸🇦 Arabic</option>
+  </select>
+</nav>
+
+
+  <div class="app-container">
+    <div class="converter-card">
+      <h1 class="app-title" id="titleText">YouTube to MP3</h1>
+      <p id="descriptionText">Paste your YouTube link below and convert to MP3 instantly!</p>
+      <br><br>
+      <form id="convertForm" class="converter-form">
+        <div class="form-group">
+          <label for="url" id="urlLabel">YouTube Video URL</label>
+          <input 
+            type="text" 
+            id="url" 
+            name="url" 
+            placeholder="Enter YouTube URL"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="bitrate" id="bitrateLabel">Bitrate</label>
+          <select id="bitrate" name="bitrate">
+            <option value="128K">128K</option>
+            <option value="192K" selected>192K</option>
+            <option value="320K">320K</option>
+          </select>
+        </div>
+        
+        <!-- Thumbnail container (add this) -->
+        <div id="thumbnailContainer" style="margin: 20px 0; text-align: center;">
+          <img id="videoThumbnail" src="" alt="Video Thumbnail" style="max-width: 300px; display: none;" />
+        </div>
+        
+        
+        <button type="submit" class="download-btn" id="convertButton">Convert & Download</button>
+      </form>
+      
+      <div id="result" class="result-area"></div>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
